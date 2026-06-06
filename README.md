@@ -38,4 +38,4 @@ Want to run GyanBook on your local machine? Follow these simple steps:
 
 1. **Clone the Repository**
 ```bash
-   git clone [https://github.com/your-username/GyanBook-Quiz-LMS.git](https://github.com/your-username/GyanBook-Quiz-LMS.git)
+   git clone [(https://github.com/nkbcatheboy2/GyanBook-Quiz-LMS)](https://github.com/nkbcatheboy2/GyanBook-Quiz-LMS.git)
