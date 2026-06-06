@@ -1,0 +1,50 @@
+Move to Server Directory
+Move the GyanBook folder to your local server's root directory:
+
+XAMPP: C:\xampp\htdocs\GyanBook
+
+WAMP: C:\wamp\www\GyanBook
+
+Database Setup
+
+Open http://localhost/phpmyadmin in your browser.
+
+Create a new database named gk_software.
+
+Look for the database.sql file in this repository and import it into your gk_software database, OR run the SQL queries manually to create the users, questions, results, and stories tables.
+
+Run the Application
+
+Open your browser and go to http://localhost/GyanBook
+
+Default Admin Password: admin123 (Can be changed in admin.php)
+
+📂 Project Structure
+index.php - Home page featuring the hero section and dynamic motivational stories.
+
+register.php / login.php - Secure user authentication pages.
+
+quiz.php - Category selection and interactive exam interface.
+
+submit_quiz.php - Backend logic to evaluate answers and save results.
+
+certificate.php - Generates a beautifully styled, printable completion certificate.
+
+admin.php - The central hub for administrators to manage content and view logs.
+
+edit_question.php - Dedicated interface for updating existing quiz questions.
+
+navbar.php - Reusable stylish navigation bar with session handling.
+
+db.php - Database connection configuration.
+
+💡 Future Enhancements (Roadmap)
+[ ] Add a timer for the quiz.
+
+[ ] Implement a global leaderboard.
+
+[ ] Add an option for users to view their past test history.
+
+[ ] Send automated result emails to students.
+
+Built with ❤️ by Nitesh Bhardwaj
