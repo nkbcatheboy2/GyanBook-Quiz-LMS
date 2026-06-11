@@ -147,8 +147,6 @@
         }
 
         // ================= AJAX COMMENT FUNCTIONS =================
-
-        // 1. Comments Fetch Karne Ka Function
         function fetchComments(story_id) {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "comment_api.php?action=fetch&story_id=" + story_id, true);
@@ -160,7 +158,6 @@
             xhr.send();
         }
 
-        // 2. Comment Post Karne Ka Function
         function postComment() {
             var story_id = document.getElementById('activeStoryId').value;
             var comment_box = document.getElementById('commentText');
@@ -177,10 +174,10 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     if(xhr.responseText.includes("Success")) {
-                        comment_box.value = ""; // Text box clear karo
-                        fetchComments(story_id); // Comments wapas refresh karo immediately
+                        comment_box.value = ""; 
+                        fetchComments(story_id);
                     } else {
-                        alert(xhr.responseText); // Agar login na ho toh error
+                        alert(xhr.responseText);
                     }
                 }
             };
