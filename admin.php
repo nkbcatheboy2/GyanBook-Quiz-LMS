@@ -2,14 +2,14 @@
 include 'db.php';
 session_start();
 
-// LOGIN LOGIC
+
 if(isset($_POST['login'])) {
     if($_POST['password'] == 'Nitesh@2026') { $_SESSION['admin'] = true; } 
     else { $error = "Invalid Security Credentials!"; }
 }
 if(isset($_GET['logout'])) { session_destroy(); header("Location: admin.php"); }
 
-// DELETE QUESTION
+
 if(isset($_GET['delete_q']) && isset($_SESSION['admin'])) {
     $del_id = intval($_GET['delete_q']);
     $conn->query("DELETE FROM questions WHERE id = $del_id");
@@ -25,7 +25,7 @@ if(isset($_GET['delete_story']) && isset($_SESSION['admin'])) {
     exit();
 }
 
-// ADD SINGLE QUESTION
+
 if(isset($_POST['add_q']) && isset($_SESSION['admin'])) {
     $cat = $conn->real_escape_string($_POST['category']);
     $q = $conn->real_escape_string($_POST['q']);
