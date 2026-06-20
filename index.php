@@ -35,7 +35,7 @@
         .modal-content::-webkit-scrollbar-track { background: #0f172a; border-radius: 10px; }
         .modal-content::-webkit-scrollbar-thumb { background: #38bdf8; border-radius: 10px; }
 
-        /* Comment Section Styles */
+       
         .comment-section { margin-top: 30px; border-top: 2px solid #334155; padding-top: 20px; }
         .comment-input-area { display: flex; gap: 10px; margin-bottom: 20px; }
         .comment-input { flex-grow: 1; padding: 12px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: white; font-family: 'Poppins'; outline: none; }
@@ -82,18 +82,18 @@
         </div>
     </div>
 
-    <!-- POPUP MODAL -->
+   
     <div id="storyModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle">Story Title</h2>
             <p id="modalContent" style="margin-bottom: 20px;">Story Content</p>
 
-            <!-- COMMENT SECTION (New) -->
+         
             <div class="comment-section">
                 <h3 style="color: #38bdf8; font-size: 20px; margin-top: 0;">💬 Discussion</h3>
                 
-                <!-- Hidden input to store active story ID -->
+               
                 <input type="hidden" id="activeStoryId" value="">
                 
                 <?php if(isset($_SESSION['user_name'])): ?>
@@ -107,7 +107,7 @@
                     </div>
                 <?php endif; ?>
 
-                <!-- List where comments will load -->
+               
                 <div id="commentsList" class="comments-list">
                     <div style="text-align:center; color:gray;">Loading comments...</div>
                 </div>
@@ -116,7 +116,7 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT FOR POPUP & AJAX COMMENTS -->
+   
     <script>
         function openModal(btn, story_id) {
             var card = btn.parentElement;
@@ -146,7 +146,7 @@
             }
         }
 
-        // ================= AJAX COMMENT FUNCTIONS =================
+      
         function fetchComments(story_id) {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "comment_api.php?action=fetch&story_id=" + story_id, true);
