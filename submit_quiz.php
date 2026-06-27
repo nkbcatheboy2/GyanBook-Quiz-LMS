@@ -24,11 +24,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_name'])) {
             }
         }
 
-        // Student ka result database me save karna (Category ke sath)
+       
         $insert = "INSERT INTO results (student_name, score, total, category) VALUES ('$name', '$score', '$total', '$cat_name')";
         
         if($conn->query($insert)) {
-            // Certificate par bhejna (Name, Score, Total aur Category ke sath)
+            
             header("Location: certificate.php?name=" . urlencode($name) . "&score=$score&total=$total&cat=" . urlencode($cat_name));
             exit();
         } else {
