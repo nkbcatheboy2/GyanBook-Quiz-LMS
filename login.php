@@ -10,18 +10,18 @@ if(isset($_POST['login'])) {
     $res = $conn->query("SELECT * FROM users WHERE email='$email'");
     if($res->num_rows > 0) {
         $row = $res->fetch_assoc();
-        // Password verify karna
+        // Verify password
         if(password_verify($pass, $row['password'])) {
             $_SESSION['user_name'] = $row['name'];
             $_SESSION['user_email'] = $row['email'];
-            // Login hote hi direct quiz wale page par bhej do
+            // Redirect directly to the quiz page upon successful login
             header("Location: quiz.php"); 
             exit();
         } else {
-            $msg = "Galat Password! Wapas try karein.";
+            $msg = "Incorrect Password! Please try again.";
         }
     } else {
-        $msg = "Ye Email registered nahi hai! Pehle Register karein.";
+        $msg = "This Email is not registered! Please Register first.";
     }
 }
 ?>
@@ -52,7 +52,7 @@ if(isset($_POST['login'])) {
             <button type="submit" name="login" class="login-btn">Login to Start Exam</button>
         </form>
         
-        <p style="margin-top: 20px;">Account nahi hai? <a href="register.php" style="color: #38bdf8;">Register karein</a></p>
+        <p style="margin-top: 20px;">Don't have an account? <a href="register.php" style="color: #38bdf8;">Register here</a></p>
     </div>
 </body>
 </html>
